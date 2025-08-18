@@ -52,38 +52,38 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-gray-50 py-12 px-4">
+    <section className="bg-gray-50 py-8 md:py-12 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">What Our Customers Say</h2>
-          <p className="text-gray-600">Trusted by thousands of customers across India</p>
+        <div className="text-center mb-6 md:mb-10">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-1 md:mb-2">What Our Customers Say</h2>
+          <p className="text-sm md:text-base text-gray-600">Trusted by thousands of customers across India</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           {/* Desktop view - side by side cards */}
-          <div className="hidden md:grid grid-cols-2 gap-6">
+          <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {testimonials.map((testimonial) => (
               <div 
                 key={testimonial.id}
-                className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
+                className="bg-white p-4 md:p-5 lg:p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
               >
-                <div className="flex items-start mb-4">
+                <div className="flex items-start mb-3 md:mb-4">
                   <Image 
                     src={testimonial.image} 
                     alt={testimonial.name}
                     width={60}
                     height={60}
-                    className="rounded-full mr-4"
+                    className="rounded-full mr-3 md:mr-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
                   />
                   <div>
-                    <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                    <h3 className="font-semibold text-base md:text-lg">{testimonial.name}</h3>
+                    <p className="text-gray-600 text-xs md:text-sm">{testimonial.role}</p>
                     <div className="flex mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg 
                           key={i}
                           xmlns="http://www.w3.org/2000/svg" 
-                          className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                          className={`h-3 w-3 md:h-4 md:w-4 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`}
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -93,31 +93,31 @@ export default function Testimonials() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">{testimonial.content}</p>
+                <p className="text-gray-700 italic text-xs md:text-sm">{testimonial.content}</p>
               </div>
             ))}
           </div>
 
           {/* Mobile view - carousel */}
           <div className="md:hidden relative">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-start mb-4">
+            <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md">
+              <div className="flex items-start mb-3 sm:mb-4">
                 <Image 
                   src={testimonials[activeIndex].image} 
                   alt={testimonials[activeIndex].name}
-                  width={60}
-                  height={60}
-                  className="rounded-full mr-4"
+                  width={50}
+                  height={50}
+                  className="rounded-full mr-3 w-10 h-10 sm:w-12 sm:h-12"
                 />
                 <div>
-                  <h3 className="font-semibold text-lg">{testimonials[activeIndex].name}</h3>
-                  <p className="text-gray-600 text-sm">{testimonials[activeIndex].role}</p>
+                  <h3 className="font-semibold text-base sm:text-lg">{testimonials[activeIndex].name}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm">{testimonials[activeIndex].role}</p>
                   <div className="flex mt-1">
                     {[...Array(5)].map((_, i) => (
                       <svg 
                         key={i}
                         xmlns="http://www.w3.org/2000/svg" 
-                        className={`h-4 w-4 ${i < testimonials[activeIndex].rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                        className={`h-3 w-3 sm:h-4 sm:w-4 ${i < testimonials[activeIndex].rating ? 'text-yellow-400' : 'text-gray-300'}`}
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -127,36 +127,36 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-700 italic">{testimonials[activeIndex].content}</p>
+              <p className="text-gray-700 italic text-xs sm:text-sm">{testimonials[activeIndex].content}</p>
             </div>
 
             {/* Navigation buttons */}
-            <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-2">
+            <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-1 sm:px-2">
               <button 
                 onClick={prevTestimonial}
-                className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
+                className="bg-white rounded-full p-1.5 sm:p-2 shadow-md hover:bg-gray-100"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button 
                 onClick={nextTestimonial}
-                className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
+                className="bg-white rounded-full p-1.5 sm:p-2 shadow-md hover:bg-gray-100"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
             {/* Dots indicator */}
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-3 sm:mt-4">
               {testimonials.map((_, index) => (
                 <button 
                   key={index} 
                   onClick={() => setActiveIndex(index)}
-                  className={`h-2 w-2 mx-1 rounded-full ${index === activeIndex ? 'bg-green-600' : 'bg-gray-300'}`}
+                  className={`h-1.5 w-1.5 sm:h-2 sm:w-2 mx-1 rounded-full ${index === activeIndex ? 'bg-green-600' : 'bg-gray-300'}`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}

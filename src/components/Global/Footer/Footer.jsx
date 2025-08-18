@@ -11,8 +11,8 @@ const Footer = () => {
           {/* Company Information */}
           <div>
             {/* <h3 className="text-xl font-semibold mb-4 text-primary-600">MediGlucks</h3> */}
-            <img src="/f.png" alt="" className='w-full max-w-[200px] sm:max-w-none mb-2 md:mb-0'/>
-            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">
+            <img src="/logo.png" alt="" className='w-full max-w-[200px] sm:max-w-none mb-2 md:mb-4 '/>
+            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-justify">
               Your trusted partner for all healthcare needs. We provide quality medicines, health products, and wellness solutions.
             </p>
             <div className="flex items-start md:items-center mb-2">

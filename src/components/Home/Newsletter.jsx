@@ -22,40 +22,40 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-green-600 py-12">
+    <section className="bg-green-600 py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
             Subscribe to Our Newsletter
           </h2>
-          <p className="text-green-100 mb-6">
+          <p className="text-green-100 text-sm sm:text-base mb-4 md:mb-6">
             Get health tips, medication updates, and exclusive offers delivered to your inbox
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3 max-w-lg mx-auto">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-grow px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
               required
             />
             <button
               type="submit"
-              className="bg-white text-green-600 font-medium px-6 py-3 rounded-lg hover:bg-green-50 transition-colors"
+              className="bg-white text-green-600 font-medium text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-50 transition-colors"
             >
               Subscribe
             </button>
           </form>
 
           {subscribed && (
-            <div className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg inline-block">
+            <div className="mt-3 sm:mt-4 bg-green-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg inline-block text-xs sm:text-sm">
               Thank you for subscribing!
             </div>
           )}
 
-          <div className="mt-6 text-green-100 text-sm">
+          <div className="mt-4 sm:mt-6 text-green-100 text-xs sm:text-sm">
             <p>
               By subscribing, you agree to our{" "}
               <a href="#" className="text-white underline hover:no-underline">

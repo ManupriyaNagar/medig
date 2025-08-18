@@ -128,7 +128,7 @@ export default function Banner() {
               </motion.p>
               
               <motion.button 
-                className="px-6 py-2 md:px-8 md:py-3 text-sm md:text-base rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-6 py-2 md:px-8 md:py-3 text-sm md:text-base rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all  transform hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
@@ -147,7 +147,7 @@ export default function Banner() {
               transition={{ duration: 0.8 }}
               key={`image-${currentSlide}`}
             >
-              <div className={`relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl bg-gradient-to-r ${banners[currentSlide].bgColor}`}>
+              <div className={`relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-xl md:rounded-2xl overflow-hidden  bg-gradient-to-r ${banners[currentSlide].bgColor}`}>
                 <Image
                   src={banners[currentSlide].img}
                   alt={banners[currentSlide].alt}

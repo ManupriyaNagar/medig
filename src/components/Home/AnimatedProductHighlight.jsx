@@ -48,7 +48,7 @@ export default function AnimatedProductHighlight() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
           {/* Product 1 */}
           <motion.div 
-            className="bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 w-full md:w-1/3 relative z-10 border border-blue-100"
+            className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 w-full md:w-1/3 relative z-10 border border-blue-100"
             style={{ y: y1 }}
           >
             <div className="bg-blue-50 rounded-lg md:rounded-xl p-3 md:p-4 mb-4 md:mb-6 flex justify-center">
@@ -72,14 +72,14 @@ export default function AnimatedProductHighlight() {
                 Add to Cart
               </motion.button>
             </div>
-            <div className="absolute -top-2 md:-top-3 -right-2 md:-right-3 bg-red-500 text-white text-xs md:text-sm font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-lg">
+            <div className="absolute -top-2 md:-top-3 -right-2 md:-right-3 bg-red-500 text-white text-xs md:text-sm font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full ">
               20% OFF
             </div>
           </motion.div>
           
           {/* Product 2 */}
           <motion.div 
-            className="bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 w-full md:w-1/3 relative z-20 border border-blue-100 mt-6 md:mt-12"
+            className="bg-white rounded-xl md:rounded-2xl  p-4 md:p-6 w-full md:w-1/3 relative z-20 border border-blue-100 mt-6 md:mt-12"
             style={{ y: y2 }}
           >
             <div className="bg-green-50 rounded-lg md:rounded-xl p-3 md:p-4 mb-4 md:mb-6 flex justify-center">
@@ -103,14 +103,14 @@ export default function AnimatedProductHighlight() {
                 Add to Cart
               </motion.button>
             </div>
-            <div className="absolute -top-2 md:-top-3 -right-2 md:-right-3 bg-green-500 text-white text-xs md:text-sm font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-lg">
+            <div className="absolute -top-2 md:-top-3 -right-2 md:-right-3 bg-green-500 text-white text-xs md:text-sm font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full ">
               NEW
             </div>
           </motion.div>
           
           {/* Product 3 */}
           <motion.div 
-            className="bg-white rounded-xl md:rounded-2xl shadow-xl p-4 md:p-6 w-full md:w-1/3 relative z-10 border border-blue-100 mt-6 md:mt-0"
+            className="bg-white rounded-xl md:rounded-2xl  p-4 md:p-6 w-full md:w-1/3 relative z-10 border border-blue-100 mt-6 md:mt-0"
             style={{ y: y3 }}
           >
             <div className="bg-purple-50 rounded-lg md:rounded-xl p-3 md:p-4 mb-4 md:mb-6 flex justify-center">

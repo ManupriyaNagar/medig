@@ -22,7 +22,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-xl md:text-2xl font-bold text-green-600 flex items-center">
-              <Image src="/logo.png" alt="MediGlucks" width={100} height={60} className="w-20 md:w-full mr-1 md:mr-2" />
+              <Image src="/logo.png" alt="MediGlucks" width={140} height={80} className="w-20 md:w-full mr-1 md:mr-2 h-auto" />
             </Link>
           </div>
 
