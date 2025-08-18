@@ -1,11 +1,26 @@
 "use client"; // Enable client-side rendering
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const LocationDropdown = () => {
   const [currentLocation, setCurrentLocation] = useState("Gurgaon");
   const [showDropdown, setShowDropdown] = useState(false);
   const [cities, setCities] = useState([]);
+  const dropdownRef = useRef(null);
+  
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    }
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Fetch Top Cities from GeoDB Cities API
   useEffect(() => {
@@ -74,27 +89,35 @@ const LocationDropdown = () => {
   };
 
   return (
-    <div className="relative container mx-auto">
+    <div className="relative" ref={dropdownRef}>
       {/* Location Display */}
       <div
-        className="flex items-center space-x-2 bg-white px-3 py-2 rounded-md cursor-pointer"
+        className="flex items-center space-x-1 md:space-x-2 bg-white px-2 md:px-3 py-1 md:py-2 rounded-md cursor-pointer text-sm md:text-base"
         onClick={() => setShowDropdown(!showDropdown)}
       >
-        <span className="text-gray-500 material-icons">location_on</span>
-        <span className="text-gray-700 font-medium">{currentLocation}</span>
-        <span className="text-gray-500 material-icons cursor-pointer">gps_fixed</span>
+        <span className="text-gray-500 material-icons text-sm md:text-base">location_on</span>
+        <span className="text-gray-700 font-medium truncate max-w-[80px] md:max-w-full">{currentLocation}</span>
+        <span 
+          className="text-gray-500 material-icons text-sm md:text-base cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            detectLocation();
+          }}
+        >
+          gps_fixed
+        </span>
       </div>
 
       {/* Dropdown */}
       {showDropdown && (
-        <div className="absolute mt-2 bg-white shadow-lg rounded-md w-64 z-10">
-          <div className="px-4 py-2 text-gray-500 font-bold">TOP CITIES</div>
-          <ul className="divide-y divide-gray-200">
+        <div className="absolute mt-1 md:mt-2 bg-white shadow-lg rounded-md w-48 md:w-64 z-50">
+          <div className="px-3 md:px-4 py-1 md:py-2 text-gray-500 font-bold text-xs md:text-sm">TOP CITIES</div>
+          <ul className="divide-y divide-gray-200 max-h-[200px] overflow-y-auto">
             {cities.length > 0 ? (
               cities.map((city, index) => (
                 <li
                   key={index}
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                  className="px-3 md:px-4 py-1 md:py-2 cursor-pointer hover:bg-gray-100 text-sm"
                   onClick={() => {
                     setCurrentLocation(city);
                     setShowDropdown(false);
@@ -104,12 +127,16 @@ const LocationDropdown = () => {
                 </li>
               ))
             ) : (
-              <li className="px-4 py-2 text-gray-500">No cities available</li>
+              <li className="px-3 md:px-4 py-1 md:py-2 text-gray-500 text-sm">No cities available</li>
             )}
           </ul>
           <button
-            onClick={detectLocation}
-            className="w-full text-center py-2 text-blue-600 font-bold hover:bg-gray-50"
+            onClick={(e) => {
+              e.stopPropagation();
+              detectLocation();
+              setShowDropdown(false);
+            }}
+            className="w-full text-center py-1.5 md:py-2 text-blue-600 font-bold hover:bg-gray-50 text-sm"
           >
             Detect My Location
           </button>
