@@ -22,7 +22,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-green-600 py-8 md:py-12">
+    <section className="bg-[#71AA49] py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
@@ -38,12 +38,12 @@ export default function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
-              className="flex-grow px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-grow px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white  focus:outline-none focus:ring-2 focus:ring-[#2DAAE0]"
               required
             />
             <button
               type="submit"
-              className="bg-white text-green-600 font-medium text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-green-50 transition-colors"
+              className="bg-white  font-medium text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#2DAAE0] transition-colors hover:text-white"
             >
               Subscribe
             </button>

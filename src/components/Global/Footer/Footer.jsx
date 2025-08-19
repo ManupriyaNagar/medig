@@ -11,11 +11,11 @@ const Footer = () => {
           {/* Company Information */}
           <div>
             {/* <h3 className="text-xl font-semibold mb-4 text-primary-600">MediGlucks</h3> */}
-            <img src="/logo.png" alt="" className='w-full max-w-[200px] sm:max-w-none mb-2 md:mb-4 '/>
-            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-justify">
+            <img src="/logo.png" alt="" className='w-full max-w-[200px] sm:max-w-none mb-2 md:mb-4 ' />
+            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-justify mt-10">
               Your trusted partner for all healthcare needs. We provide quality medicines, health products, and wellness solutions.
             </p>
-            <div className="flex items-start md:items-center mb-2">
+            <div className="flex items-start md:items-center mb-2 ">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-600 mr-2 mt-0.5 md:mt-0 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -118,20 +118,20 @@ const Footer = () => {
             </p>
             <div className="flex flex-col space-y-3">
               <Link href="#" className="inline-block">
-                <Image 
-                  src="/img8.png" 
-                  alt="Download on App Store" 
-                  width={140} 
-                  height={42} 
+                <Image
+                  src="/img8.png"
+                  alt="Download on App Store"
+                  width={140}
+                  height={42}
                   className="h-10 w-auto"
                 />
               </Link>
               <Link href="#" className="inline-block">
-                <Image 
-                  src="/img8.png" 
-                  alt="Get it on Google Play" 
-                  width={140} 
-                  height={42} 
+                <Image
+                  src="/img8.png"
+                  alt="Get it on Google Play"
+                  width={140}
+                  height={42}
                   className="h-10 w-auto"
                 />
               </Link>
@@ -174,40 +174,40 @@ const Footer = () => {
               <div className="flex space-x-4">
                 <span className="bg-white p-2 rounded shadow-sm">
                   <svg className="h-6 w-10" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="24" rx="4" fill="white"/>
-                    <path d="M15.4 14.8L16.4 9.2H14.8L13.8 14.8H15.4Z" fill="#3C4043"/>
-                    <path d="M21.2 14.9C22.4 14.9 23.4 14.2 23.7 13.1L23.6 13.3L24.1 9.9H22.6L22.3 11.7C22.2 12.1 21.8 12.5 21.3 12.5C20.8 12.5 20.5 12.1 20.6 11.7L21 9.9H19.5L19 12.4C18.8 13.8 19.7 14.9 21.2 14.9Z" fill="#3C4043"/>
-                    <path d="M26.9 14.8H28.4L29.4 9.2H27.9L26.9 14.8Z" fill="#3C4043"/>
-                    <path d="M11.5 9.2L10 14.8H11.5L13 9.2H11.5Z" fill="#3C4043"/>
-                    <path d="M17.9 9.2C16.7 9.2 15.7 9.9 15.4 11L15.5 10.8L15 14.2H16.5L16.8 12.4C16.9 12 17.3 11.6 17.8 11.6C18.3 11.6 18.6 12 18.5 12.4L18.1 14.2H19.6L20.1 11.7C20.3 10.3 19.4 9.2 17.9 9.2Z" fill="#3C4043"/>
+                    <rect width="40" height="24" rx="4" fill="white" />
+                    <path d="M15.4 14.8L16.4 9.2H14.8L13.8 14.8H15.4Z" fill="#3C4043" />
+                    <path d="M21.2 14.9C22.4 14.9 23.4 14.2 23.7 13.1L23.6 13.3L24.1 9.9H22.6L22.3 11.7C22.2 12.1 21.8 12.5 21.3 12.5C20.8 12.5 20.5 12.1 20.6 11.7L21 9.9H19.5L19 12.4C18.8 13.8 19.7 14.9 21.2 14.9Z" fill="#3C4043" />
+                    <path d="M26.9 14.8H28.4L29.4 9.2H27.9L26.9 14.8Z" fill="#3C4043" />
+                    <path d="M11.5 9.2L10 14.8H11.5L13 9.2H11.5Z" fill="#3C4043" />
+                    <path d="M17.9 9.2C16.7 9.2 15.7 9.9 15.4 11L15.5 10.8L15 14.2H16.5L16.8 12.4C16.9 12 17.3 11.6 17.8 11.6C18.3 11.6 18.6 12 18.5 12.4L18.1 14.2H19.6L20.1 11.7C20.3 10.3 19.4 9.2 17.9 9.2Z" fill="#3C4043" />
                   </svg>
                 </span>
                 <span className="bg-white p-2 rounded shadow-sm">
                   <svg className="h-6 w-10" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="24" rx="4" fill="white"/>
-                    <path d="M22.2 12C22.2 14.4 20.2 16.4 17.8 16.4C15.4 16.4 13.4 14.4 13.4 12C13.4 9.6 15.4 7.6 17.8 7.6C20.2 7.6 22.2 9.6 22.2 12Z" fill="#EB001B"/>
-                    <path d="M26.6 12C26.6 14.4 24.6 16.4 22.2 16.4C19.8 16.4 17.8 14.4 17.8 12C17.8 9.6 19.8 7.6 22.2 7.6C24.6 7.6 26.6 9.6 26.6 12Z" fill="#F79E1B"/>
-                    <path d="M24.4 12C24.4 10.8 23.4 9.8 22.2 9.8C21 9.8 20 10.8 20 12C20 13.2 21 14.2 22.2 14.2C23.4 14.2 24.4 13.2 24.4 12Z" fill="#FF5F00"/>
+                    <rect width="40" height="24" rx="4" fill="white" />
+                    <path d="M22.2 12C22.2 14.4 20.2 16.4 17.8 16.4C15.4 16.4 13.4 14.4 13.4 12C13.4 9.6 15.4 7.6 17.8 7.6C20.2 7.6 22.2 9.6 22.2 12Z" fill="#EB001B" />
+                    <path d="M26.6 12C26.6 14.4 24.6 16.4 22.2 16.4C19.8 16.4 17.8 14.4 17.8 12C17.8 9.6 19.8 7.6 22.2 7.6C24.6 7.6 26.6 9.6 26.6 12Z" fill="#F79E1B" />
+                    <path d="M24.4 12C24.4 10.8 23.4 9.8 22.2 9.8C21 9.8 20 10.8 20 12C20 13.2 21 14.2 22.2 14.2C23.4 14.2 24.4 13.2 24.4 12Z" fill="#FF5F00" />
                   </svg>
                 </span>
                 <span className="bg-white p-2 rounded shadow-sm">
                   <svg className="h-6 w-10" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="24" rx="4" fill="white"/>
-                    <path d="M14.5 9.5H25.5V14.5H14.5V9.5Z" fill="#172B85"/>
-                    <path d="M15 10H25V14H15V10Z" fill="#172B85"/>
-                    <path d="M19.5 11.2C19.5 12.2 18.7 13 17.7 13C16.7 13 15.9 12.2 15.9 11.2C15.9 10.2 16.7 9.4 17.7 9.4C18.7 9.4 19.5 10.2 19.5 11.2Z" fill="white"/>
-                    <path d="M17.7 12.8C16.8 12.8 16 12 16 11.1C16 10.2 16.8 9.4 17.7 9.4C18.6 9.4 19.4 10.2 19.4 11.1C19.4 12 18.6 12.8 17.7 12.8Z" fill="white"/>
-                    <path d="M24.1 13H23.1L23.8 10.2H24.8L24.1 13Z" fill="white"/>
-                    <path d="M22.5 13H21.5L21.9 10.2H22.9L22.5 13Z" fill="white"/>
-                    <path d="M21 13H19.8L20.4 10.2H21.6L21 13Z" fill="white"/>
+                    <rect width="40" height="24" rx="4" fill="white" />
+                    <path d="M14.5 9.5H25.5V14.5H14.5V9.5Z" fill="#172B85" />
+                    <path d="M15 10H25V14H15V10Z" fill="#172B85" />
+                    <path d="M19.5 11.2C19.5 12.2 18.7 13 17.7 13C16.7 13 15.9 12.2 15.9 11.2C15.9 10.2 16.7 9.4 17.7 9.4C18.7 9.4 19.5 10.2 19.5 11.2Z" fill="white" />
+                    <path d="M17.7 12.8C16.8 12.8 16 12 16 11.1C16 10.2 16.8 9.4 17.7 9.4C18.6 9.4 19.4 10.2 19.4 11.1C19.4 12 18.6 12.8 17.7 12.8Z" fill="white" />
+                    <path d="M24.1 13H23.1L23.8 10.2H24.8L24.1 13Z" fill="white" />
+                    <path d="M22.5 13H21.5L21.9 10.2H22.9L22.5 13Z" fill="white" />
+                    <path d="M21 13H19.8L20.4 10.2H21.6L21 13Z" fill="white" />
                   </svg>
                 </span>
                 <span className="bg-white p-2 rounded shadow-sm">
                   <svg className="h-6 w-10" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="24" rx="4" fill="white"/>
-                    <path d="M23 15.5C20.8 15.5 19 13.7 19 11.5C19 9.3 20.8 7.5 23 7.5C25.2 7.5 27 9.3 27 11.5C27 13.7 25.2 15.5 23 15.5Z" fill="#FFB600"/>
-                    <path d="M17 15.5C14.8 15.5 13 13.7 13 11.5C13 9.3 14.8 7.5 17 7.5C19.2 7.5 21 9.3 21 11.5C21 13.7 19.2 15.5 17 15.5Z" fill="#1A1876"/>
-                    <path d="M20 11.5C20 10.1 19.4 8.8 18.5 7.9C17.6 8.8 17 10.1 17 11.5C17 12.9 17.6 14.2 18.5 15.1C19.4 14.2 20 12.9 20 11.5Z" fill="#E2574C"/>
+                    <rect width="40" height="24" rx="4" fill="white" />
+                    <path d="M23 15.5C20.8 15.5 19 13.7 19 11.5C19 9.3 20.8 7.5 23 7.5C25.2 7.5 27 9.3 27 11.5C27 13.7 25.2 15.5 23 15.5Z" fill="#FFB600" />
+                    <path d="M17 15.5C14.8 15.5 13 13.7 13 11.5C13 9.3 14.8 7.5 17 7.5C19.2 7.5 21 9.3 21 11.5C21 13.7 19.2 15.5 17 15.5Z" fill="#1A1876" />
+                    <path d="M20 11.5C20 10.1 19.4 8.8 18.5 7.9C17.6 8.8 17 10.1 17 11.5C17 12.9 17.6 14.2 18.5 15.1C19.4 14.2 20 12.9 20 11.5Z" fill="#E2574C" />
                   </svg>
                 </span>
               </div>
