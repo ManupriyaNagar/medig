@@ -111,36 +111,51 @@ export default function VitaminDPage() {
           <div className="relative">
             <div className="flex gap-4 overflow-x-auto no-scrollbar">
               {topDeals.map((deal) => (
-                <div
-                  key={deal.id}
-                  className="w-60 p-4 border rounded-lg bg-white shadow-sm flex-shrink-0"
-                >
-                  <img
-                    src={deal.image}
-                    alt={deal.title}
-                    className="h-32 w-full object-contain mb-3"
-                  />
-                  <h3 className="text-sm font-medium line-clamp-2 mb-1">
-                    {deal.title}
-                  </h3>
-                  <p className="text-green-600 text-xs font-semibold">
-                    {deal.rating} ★ ({deal.reviews})
-                  </p>
-                  <div className="text-sm mt-2">
-                    <span className="font-bold">₹{deal.price}</span>{" "}
-                    {deal.discount && (
-                      <span className="text-gray-500 text-xs line-through ml-1">
-                        ₹{deal.mrp}
-                      </span>
-                    )}
-                  </div>
-                  {deal.discount && (
-                    <p className="text-green-600 text-xs">{deal.discount}</p>
-                  )}
-                  <button className="w-full mt-2 py-1 text-sm bg-[#71AA49] text-white rounded">
-                    ADD
-                  </button>
-                </div>
+             <div
+  key={deal.id}
+  className="w-60 p-4 border rounded-2xl bg-white shadow-md flex-shrink-0 relative 
+             hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+>
+  {/* Discount Badge */}
+  {deal.discount && (
+    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full shadow">
+      {deal.discount}
+    </span>
+  )}
+
+  {/* Product Image */}
+  <img
+    src={deal.image}
+    alt={deal.title}
+    className="h-32 w-full object-contain mb-3"
+  />
+
+  {/* Product Title */}
+  <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 mb-2">
+    {deal.title}
+  </h3>
+
+  {/* Rating */}
+  <p className="text-yellow-500 text-xs font-medium flex items-center gap-1 mb-2">
+    ⭐ {deal.rating}
+    <span className="text-gray-500">({deal.reviews})</span>
+  </p>
+
+  {/* Price */}
+  <div className="text-sm mt-1">
+    <span className="font-bold text-lg text-gray-800">₹{deal.price}</span>{" "}
+    {deal.mrp !== deal.price && (
+      <span className="text-gray-500 text-xs line-through ml-1">₹{deal.mrp}</span>
+    )}
+  </div>
+
+  {/* Add Button */}
+  <button className="w-full mt-3 py-2 text-sm bg-[#71AA49] hover:bg-[#5f8d3d] 
+                     text-white rounded-lg font-medium transition-colors duration-200">
+    ADD TO CART
+  </button>
+</div>
+
               ))}
             </div>
             {/* Arrows */}
