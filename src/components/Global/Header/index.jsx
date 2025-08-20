@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Top bar */}
-      <div className="bg-green-600 text-white text-center py-1 text-xs">
+      <div className="bg-[#71AA49] text-white text-center py-1 text-xs">
         <p className="text-[10px] md:text-xs">Free delivery on orders above ₹999 | Use code MEDI100 for 10% off on your first order</p>
       </div>
 
@@ -34,7 +34,7 @@ export default function Header() {
                 placeholder="Search for medicines, health products and more"
                 className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               />
-              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-1 rounded-md">
+              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#71AA49] text-white p-1 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>

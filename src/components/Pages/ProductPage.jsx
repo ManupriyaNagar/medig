@@ -81,7 +81,7 @@ export default function ProductPage({ product }) {
           </div>
 
           {/* Add to Cart */}
-          <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-medium transition">
+          <button className="bg-[#71AA49] hover:bg-[#71AA49] text-white px-6 py-3 rounded-lg font-medium transition">
             Add to Cart
           </button>
         </div>
@@ -124,7 +124,7 @@ export default function ProductPage({ product }) {
               <p className="text-sm font-medium mt-2 line-clamp-2">
                 {item.title}
               </p>
-              <p className="text-red-500 font-semibold mt-1">₹{item.price}</p>
+              <p className="text-[#71AA49] font-semibold mt-1">₹{item.price}</p>
             </div>
           ))}
         </div>

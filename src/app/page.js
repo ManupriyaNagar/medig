@@ -10,6 +10,7 @@ import FloatingCTA from "@/components/Home/FloatingCTA";
 import AnimatedProductHighlight from "@/components/Home/AnimatedProductHighlight";
 import Image from "next/image";
 
+
   const trendingProducts = [
     {
       title: "Shelcal 500mg Strip Of 15 Tablets",
@@ -77,6 +78,7 @@ export default function Home() {
       />
       <HealthBlog />
       <Testimonials />
+
       <Newsletter />
     </div>
   );

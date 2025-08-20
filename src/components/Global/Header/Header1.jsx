@@ -8,12 +8,8 @@ const Header1 = () => {
       <div className="container mx-auto flex items-center justify-between py-3 ">
         {/* Logo */}
         <div className="flex items-center ">
-          <img src="/nav.png" alt="Logo"  className='w-50 h-auto'/>
-         
+          <img src="/nav.png" alt="Logo"  className='w-50 h-auto'/>    
         </div>
-
- 
-
         {/* Right Section */}
         <div className="flex items-center space-x-6">
   <Link href="/cart" className="relative">

@@ -1,169 +1,179 @@
 "use client";
-
 import { useState } from "react";
-import Image from "next/image";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const testimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
-    role: "Regular Customer",
-    image: "/img1.webp",
-    content: "MediGlucks has been a lifesaver for my family. The medicine delivery is always on time, and their customer service is exceptional. I've been using their services for over a year now and have never been disappointed.",
-    rating: 5,
+    name: "Karan",
+    role: "QA Associate",
+    text: "I started my career here as a Fresher & was welcomed by an incredible team that values personal & professional growth. My experience here has been a journey of constant learning & upskilling.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
   },
   {
     id: 2,
-    name: "Rahul Verma",
-    role: "Diabetic Patient",
-    image: "/img2.webp",
-    content: "As someone who needs regular medication for diabetes, MediGlucks has made my life so much easier. Their subscription service ensures I never run out of my essential medicines. Highly recommended!",
-    rating: 5,
+    name: "Prathiksha Shetty",
+    role: "Ass. Software Developer",
+    text: "In my time here, I've experienced firsthand the support system that Vinove has in place. From continuous training & development opportunities to upskilling of already present skills.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
   },
   {
     id: 3,
-    name: "Anita Desai",
-    role: "Senior Citizen",
-    image: "/img3.webp",
-    content: "At my age, going to pharmacies was becoming difficult. MediGlucks delivers all my medications right to my doorstep. Their app is also very easy to use, even for someone not very tech-savvy like me.",
-    rating: 4,
+    name: "Ram",
+    role: "Associate Software Developer",
+    text: "What makes Vinove special is the way they help employees grow. The best part is that senior colleagues are always there to help and guide. Their mentoring has been a big part of my success.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
   },
   {
     id: 4,
-    name: "Vikram Singh",
-    role: "Healthcare Professional",
-    image: "/img4.webp",
-    content: "As a doctor, I often recommend MediGlucks to my patients. Their wide range of medicines and health products, combined with reliable delivery, makes them a trustworthy option for healthcare needs.",
+    name: "Anita",
+    role: "UI/UX Designer",
+    text: "The culture here is supportive and collaborative. I’ve learned so much from my peers and leaders alike.",
     rating: 5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Client Testimonials",
+  },
+  {
+    id: 5,
+    name: "Vivek",
+    role: "Backend Engineer",
+    text: "I’ve grown professionally thanks to the opportunities and mentorship. Every project has been a new learning experience.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
+  },
+  {
+    id: 6,
+    name: "Rohit",
+    role: "Frontend Developer",
+    text: "Amazing workplace culture and opportunities to explore new tech.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
+  },
+  {
+    id: 7,
+    name: "Sneha",
+    role: "HR",
+    text: "Supportive management and great work-life balance!",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
+  },
+  {
+    id: 8,
+    name: "Ajay",
+    role: "Tester",
+    text: "Good projects, friendly environment, lots to learn.",
+    rating: 4.5,
+    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg",
+    type: "Patient Testimonials",
   },
 ];
 
-export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
+const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
+  const visibleCount = 3;
+  const totalDots = 7; // 👈 Always show 7 dots
 
-  const nextTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? totalDots - 1 : prev - 1));
   };
 
-  const prevTestimonial = () => {
-    setActiveIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === totalDots - 1 ? 0 : prev + 1));
   };
 
   return (
-    <section className="bg-gray-50 py-8 md:py-12 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-6 md:mb-10">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-1 md:mb-2">What Our Customers Say</h2>
-          <p className="text-sm md:text-base text-gray-600">Trusted by thousands of customers across India</p>
-        </div>
+    <section className="py-16 bg-white">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold">Client Success and Team Pride</h2>
+        <p className="text-gray-600 mt-2">
+          Let the success stories of our clients and the pride of our team speak for themselves.
+        </p>
+      </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Desktop view - side by side cards */}
-          <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-            {testimonials.map((testimonial) => (
-              <div 
-                key={testimonial.id}
-                className="bg-white p-4 md:p-5 lg:p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="flex items-start mb-3 md:mb-4">
-                  <Image 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full mr-3 md:mr-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+      <div className="relative max-w-7xl mx-auto px-6">
+        {/* Cards container */}
+        <div className="flex gap-6 overflow-hidden">
+          {testimonials.slice(current, current + visibleCount).map((item) => (
+            <div key={item.id} className="flex-1 text-center max-w-sm">
+              <div className="relative bg-gray-100 rounded-2xl p-6 w-full h-[340px] flex flex-col justify-between border-t-0 border-r-0 border-l-0 border-gray-200 border-9">
+                {/* Stars */}
+                <div className="flex justify-center mb-4 text-yellow-400">
+                  {[...Array(4)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                  <FaStarHalfAlt />
+                </div>
+
+                {/* Quote */}
+                <p className="text-black text-lg flex-1 text-left">
+                  “{item.text}”
+                </p>
+
+                {/* User */}
+                <div className="flex items-center gap-3 ">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-12 h-12 rounded-full object-cover"
                   />
-                  <div>
-                    <h3 className="font-semibold text-base md:text-lg">{testimonial.name}</h3>
-                    <p className="text-gray-600 text-xs md:text-sm">{testimonial.role}</p>
-                    <div className="flex mt-1">
-                      {[...Array(5)].map((_, i) => (
-                        <svg 
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg" 
-                          className={`h-3 w-3 md:h-4 md:w-4 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
+                  <div className="text-left">
+                    <h4 className="font-semibold">{item.name}</h4>
+                    <p className="text-sm text-gray-500">{item.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic text-xs md:text-sm">{testimonial.content}</p>
               </div>
+              {/* Label below */}
+              <p className="mt-6 text-sm font-medium text-gray-800">
+                {item.type}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation with dots */}
+        <div className="flex items-center justify-center mt-6 space-x-4">
+          {/* Prev Button */}
+          <button
+            onClick={prevSlide}
+            className="bg-white rounded-full p-2 hover:bg-gray-100 shadow"
+          >
+            <HiChevronLeft className="text-2xl" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex space-x-2">
+            {Array.from({ length: totalDots }).map((_, i) => (
+              <span
+                key={i}
+                className={`h-2 w-8 rounded-full cursor-pointer transition ${
+                  current === i ? "bg-black" : "bg-gray-300"
+                }`}
+                onClick={() => setCurrent(i)}
+              />
             ))}
           </div>
 
-          {/* Mobile view - carousel */}
-          <div className="md:hidden relative">
-            <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md">
-              <div className="flex items-start mb-3 sm:mb-4">
-                <Image 
-                  src={testimonials[activeIndex].image} 
-                  alt={testimonials[activeIndex].name}
-                  width={50}
-                  height={50}
-                  className="rounded-full mr-3 w-10 h-10 sm:w-12 sm:h-12"
-                />
-                <div>
-                  <h3 className="font-semibold text-base sm:text-lg">{testimonials[activeIndex].name}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">{testimonials[activeIndex].role}</p>
-                  <div className="flex mt-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg 
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg" 
-                        className={`h-3 w-3 sm:h-4 sm:w-4 ${i < testimonials[activeIndex].rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-700 italic text-xs sm:text-sm">{testimonials[activeIndex].content}</p>
-            </div>
-
-            {/* Navigation buttons */}
-            <div className="absolute top-1/2 left-0 right-0 flex justify-between transform -translate-y-1/2 px-1 sm:px-2">
-              <button 
-                onClick={prevTestimonial}
-                className="bg-white rounded-full p-1.5 sm:p-2 shadow-md hover:bg-gray-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button 
-                onClick={nextTestimonial}
-                className="bg-white rounded-full p-1.5 sm:p-2 shadow-md hover:bg-gray-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Dots indicator */}
-            <div className="flex justify-center mt-3 sm:mt-4">
-              {testimonials.map((_, index) => (
-                <button 
-                  key={index} 
-                  onClick={() => setActiveIndex(index)}
-                  className={`h-1.5 w-1.5 sm:h-2 sm:w-2 mx-1 rounded-full ${index === activeIndex ? 'bg-green-600' : 'bg-gray-300'}`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
+          {/* Next Button */}
+          <button
+            onClick={nextSlide}
+            className="bg-white rounded-full p-2 hover:bg-gray-100 shadow"
+          >
+            <HiChevronRight className="text-2xl" />
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Testimonials;

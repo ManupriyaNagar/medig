@@ -24,10 +24,10 @@ const SearchBar = () => {
     
           {/* Quick Order Button */}
           <div className="flex items-center space-x-2 md:space-x-4">
-            <div className="text-blue-600 font-bold text-sm md:text-base">
-              <span className="text-blue-500 material-icons text-base md:text-lg">bolt</span> QUICK BUY! Get 15% off 
+            <div className="text-[#2DAAE0] font-bold text-sm md:text-base">
+              <span className="text-blue-500 material-icons text-base md:text-lg">bolt</span > QUICK BUY! Get 15% off 
             </div>
-            <button className="bg-green-400 text-white text-sm md:text-base px-3 md:px-4 py-1.5 md:py-2 rounded-md hover:bg-red-600">
+            <button className="bg-[#71AA49] text-white text-sm md:text-base px-3 md:px-4 py-1.5 md:py-2 rounded-md hover:bg-red-600">
               Quick order
             </button>
           </div>

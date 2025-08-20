@@ -5,14 +5,14 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 pt-8 md:pt-10 pb-4 md:pb-6 mt-6 md:mt-10">
+    <footer className="bg-white z-10 pt-8 md:pt-10 pb-4 md:pb-6 mt-6 md:mt-10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Company Information */}
-          <div>
+          <div className=''>
             {/* <h3 className="text-xl font-semibold mb-4 text-primary-600">MediGlucks</h3> */}
-            <img src="/logo.png" alt="" className='w-full max-w-[200px] sm:max-w-none mb-2 md:mb-4 ' />
-            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-justify mt-10">
+            <img src="/logo.png" alt="" className='w-54 max-w-[200px] sm:max-w-none mb-2 md:mb-4 ' />
+            <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base  mt-10 max-w-[240px]">
               Your trusted partner for all healthcare needs. We provide quality medicines, health products, and wellness solutions.
             </p>
             <div className="flex items-start md:items-center mb-2 ">
