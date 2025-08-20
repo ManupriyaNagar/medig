@@ -4,14 +4,53 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const items = [
+  "Uses and benefits",
+  "Side effects",
+  "How to use",
+  "How drug works",
+  "Safety advice",
+  "Missed dose",
+  "Alternate Brands",
+  "Quick tips",
+  "Fact box",
+  "Interaction with drugs",
+  "Patient concerns",
+  "User feedback",
+  "FAQs"
+];
+
+import { useEffect } from "react";
+
 export default function MedicinePage() {
   const [selectedSection, setSelectedSection] = useState(null);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="container mx-auto w-full bg-white h-screen flex">
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200">
+        <div
+          className="h-full bg-green-500"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
       {/* LEFT SIDEBAR - Quick Navigation */}
-      <aside className="w-1/4 overflow-y-auto border-r pr-4">
+      <aside className="w-1/4 overflow-y-auto border-r pr-4 sticky top-0">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,9 +64,7 @@ export default function MedicinePage() {
           transition={{ staggerChildren: 0.1 }}
           className="space-y-3 text-gray-700 text-sm"
         >
-          {["Uses and benefits", "Side effects", "How to use", "How drug works", "Safety advice", 
-            "Missed dose", "Alternate Brands", "Quick tips", "Fact box", "Interaction with drugs", 
-            "Patient concerns", "User feedback", "FAQs"].map((item, index) => (
+          {items.map((item, index) => (
             <motion.li
               key={index}
               whileHover={{ scale: 1.02, x: 5 }}
@@ -41,6 +78,47 @@ export default function MedicinePage() {
           ))}
         </motion.ul>
       </aside>
+      
+      {/* Image Modal */}
+      {isImageZoomed && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <Image
+            src="/products/dolo650.png"
+            alt="Dolo 650 Tablet"
+            width={360}
+            height={360}
+            className="object-contain cursor-pointer"
+            onClick={() => setIsImageZoomed(false)}
+          />
+        </div>
+      )}
+      
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200">
+        <div
+          className="h-full bg-green-500"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+      
+      {/* Responsive Design */}
+      <main className="w-full md:w-2/4 overflow-y-auto px-6">
+        <motion.h1 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-2xl font-bold mb-2"
+        >
+          Dolo 650 Tablet
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-sm text-gray-500 mb-4"
+        >
+          MARKETER: Micro Labs Ltd
+        </motion.p>
+      </main>
 
       {/* MAIN CONTENT */}
       <main className="w-2/4 overflow-y-auto px-6">
@@ -66,7 +144,7 @@ export default function MedicinePage() {
           whileHover={{ scale: 1.05 }}
         >
           <Image
-            src="/products/dolo650.png"
+            src="/img8.png"
             alt="Dolo 650 Tablet"
             width={180}
             height={180}

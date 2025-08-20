@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const labTests = [
   { name: "Full Body Checkups", img: "/img2.webp" },
@@ -58,9 +59,11 @@ export default function LabTests() {
             <p className="text-gray-600 text-xs md:text-sm">
               Upload prescription and we will deliver your medicines
             </p>
+            <Link href="/prescription">
             <button className="mt-2 md:mt-3 bg-green-600 text-white px-4 md:px-5 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-medium hover:bg-green-700">
               Upload
             </button>
+            </Link>
           </div>
         </div>
 
