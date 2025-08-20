@@ -105,37 +105,50 @@ const Testimonials = () => {
         <div className="flex gap-6 overflow-hidden">
           {testimonials.slice(current, current + visibleCount).map((item) => (
             <div key={item.id} className="flex-1 text-center max-w-sm">
-              <div className="relative bg-gray-100 rounded-2xl p-6 w-full h-[340px] flex flex-col justify-between border-t-0 border-r-0 border-l-0 border-gray-200 border-9">
-                {/* Stars */}
-                <div className="flex justify-center mb-4 text-yellow-400">
-                  {[...Array(4)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                  <FaStarHalfAlt />
-                </div>
+            <div
+  key={item.id}
+  className="flex-1 text-center max-w-sm"
+>
+  <div className="relative bg-gray-100 rounded-2xl p-6 w-full h-[340px] flex flex-col justify-between border-t-0 border-r-0 border-l-0 border-gray-200 border-9">
+    
+    {/* Stars */}
+    <div className="flex justify-center mb-4 text-yellow-400">
+      {[...Array(4)].map((_, i) => (
+        <FaStar key={i} />
+      ))}
+      <FaStarHalfAlt />
+    </div>
 
-                {/* Quote */}
-                <p className="text-black text-lg flex-1 text-left">
-                  “{item.text}”
-                </p>
+    {/* Quote */}
+    <p className="text-black text-lg flex-1 text-left">
+      “{item.text}”
+    </p>
 
-                {/* User */}
-                <div className="flex items-center gap-3 ">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div className="text-left">
-                    <h4 className="font-semibold">{item.name}</h4>
-                    <p className="text-sm text-gray-500">{item.role}</p>
-                  </div>
-                </div>
-              </div>
-              {/* Label below */}
-              <p className="mt-6 text-sm font-medium text-gray-800">
-                {item.type}
-              </p>
+    {/* User */}
+    <div className="flex items-center gap-3">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-12 h-12 rounded-full object-cover"
+      />
+      <div className="text-left">
+        <h4 className="font-semibold">{item.name}</h4>
+        <p className="text-sm text-gray-500">{item.role}</p>
+      </div>
+    </div>
+
+    {/* Downward Arrow - now inside */}
+    <div className="absolute left-1/2 -bottom-[0.9rem] transform -translate-x-1/2">
+      <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-gray-200"></div>
+    </div>
+  </div>
+
+  {/* Label below */}
+  <p className="mt-6 text-sm font-medium text-gray-800">{item.type}</p>
+</div>
+
+
+          
             </div>
           ))}
         </div>
@@ -155,9 +168,8 @@ const Testimonials = () => {
             {Array.from({ length: totalDots }).map((_, i) => (
               <span
                 key={i}
-                className={`h-2 w-8 rounded-full cursor-pointer transition ${
-                  current === i ? "bg-black" : "bg-gray-300"
-                }`}
+                className={`h-2 w-8 rounded-full cursor-pointer transition ${current === i ? "bg-black" : "bg-gray-300"
+                  }`}
                 onClick={() => setCurrent(i)}
               />
             ))}
